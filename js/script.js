@@ -41,18 +41,6 @@ window.onload = function () {
       // Update player's directionX and directionY based on the key pressed
       switch (key) {
         case "ArrowLeft":
-<<<<<<< HEAD
-          game.player.directionX = -1;
-          break;
-        case "ArrowUp":
-          game.player.directionY = -1;
-          break;
-        case "ArrowRight":
-          game.player.directionX = 1;
-          break;
-        case "ArrowDown":
-          game.player.directionY = 1;
-=======
           game.player.directionX = -4;
           break;
         case "ArrowUp":
@@ -93,7 +81,6 @@ window.onload = function () {
           break;
         case "ArrowDown":
           game.player.directionY = 0;
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
           break;
       }
     }
@@ -101,10 +88,6 @@ window.onload = function () {
 
   // Add the handleKeydown function as an event listener for the keydown event
   window.addEventListener("keydown", handleKeydown);
-<<<<<<< HEAD
-};
-=======
   window.addEventListener("keyup", handleKeyUp);
 };
 
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98

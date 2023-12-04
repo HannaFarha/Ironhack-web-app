@@ -1,17 +1,10 @@
 class Player extends Component {
-<<<<<<< HEAD
-    constructor(gameScreen, left, top, width, height, imgSrc) {
-      super(gameScreen, left, top, width, height, imgSrc);
-=======
     constructor(gameScreen, left, top, width, height,imgSrc) {
       super(gameScreen, left, top, width, height,imgSrc);
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
   
       this.directionX = 0;
       this.directionY = 0;
     }
-<<<<<<< HEAD
-=======
 
     change(elm){
       if(this.elm>=1){
@@ -23,7 +16,6 @@ class Player extends Component {
 
       }
     }
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
   
     move() {
       // Update player's car position based on directionX and directionY

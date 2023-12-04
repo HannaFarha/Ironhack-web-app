@@ -1,10 +1,7 @@
 body {
   padding: 0;
   text-align: center;
-<<<<<<< HEAD
-=======
   margin:0;
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
 }
 
 #game-intro {
@@ -21,21 +18,12 @@ body {
 #game-screen {
   display: none;
   align-content: center;
-<<<<<<< HEAD
-  padding: 20px 0px;
-  overflow: hidden;
-  position: relative;
-  background-image: url(../images/road.png);
-  background-size: cover;
-  animation: slide 5s linear infinite;
-=======
   padding: 10px 0px;
   overflow: hidden;
   position: relative;
   background-image: url(../images/background.jpeg);
   background-size: cover;
    animation: slide 7s linear reverse infinite; 
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
 }
 
 @keyframes slide {
@@ -57,21 +45,6 @@ body {
 .game-intro p {
   font-size: 18px;
   font-family: "Verdana";
-<<<<<<< HEAD
-}
-
-.logo-img {
-  width: 350px;
-}
-
-.arrows-img {
-  width: 150px;
-}
-
-body button {
-  font-size: 30px;
-  background-color: #870007;
-=======
   
 }
 
@@ -88,16 +61,11 @@ body button {
 body button {
   font-size: 32px;
   background-color: blue;
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
   color: #fff;
   padding: 20px 40px;
   border: 0;
   box-shadow: 0;
   border-radius: 5px;
-<<<<<<< HEAD
-  margin-bottom: 20px;
-}
-=======
   margin-bottom: 0px;
 } 
 #score {
@@ -106,4 +74,3 @@ body button {
 #lives{
   color :blue;
 }
->>>>>>> af4f1ca9283a1752cca6ec39bd202c6ef044ed98
