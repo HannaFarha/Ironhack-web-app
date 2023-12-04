@@ -1,9 +1,20 @@
 class Player extends Component {
-    constructor(gameScreen, left, top, width, height, imgSrc) {
-      super(gameScreen, left, top, width, height, imgSrc);
+    constructor(gameScreen, left, top, width, height,imgSrc) {
+      super(gameScreen, left, top, width, height,imgSrc);
   
       this.directionX = 0;
       this.directionY = 0;
+    }
+
+    change(elm){
+      if(this.elm>=1){
+        // this.player.imgSrc ="./images/health.png"
+        console.log(this.imgSrc)
+       this.imgSrc="./images/health.png";
+       console.log(this.imgSrc)
+      }else {this.imgSrc="./images/man.png";
+
+      }
     }
   
     move() {

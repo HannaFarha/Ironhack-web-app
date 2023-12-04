@@ -4,9 +4,9 @@ class Obstacle extends Component {
       gameScreen,
       Math.floor(Math.random() * 300 + 70),
       0,
+      80,
       100,
-      150,
-      "./images/redCar.png"
+      "./images/badfood.png"
     );
   }
   
