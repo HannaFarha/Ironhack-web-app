@@ -1,5 +1,6 @@
 class Game {
     constructor() {
+      
       this.startScreen = document.getElementById("game-intro");
       this.gameScreen = document.getElementById("game-screen");
       this.gameEndScreen = document.getElementById("game-end");
@@ -10,11 +11,9 @@ class Game {
         this.top=500,
         this.width=90,
         this.height=130,
-        this.imgSrc="./images/man.png",
-        
-
-      );
-      
+      // this.imgSrc="./images/man.png",
+   
+      ); 
       this.height =570;
       this.width = 700;
       this.obstacles = [];
@@ -22,9 +21,8 @@ class Game {
       this.score = 0;
       this.lives = 4;
       this.gameIsOver = false;
-    
+         
     }
-   
    
     start() {
       // Set the height and width of the game screen
@@ -41,19 +39,17 @@ class Game {
     }
   
     gameLoop() {
-      //console.log("in the game loop");
-      
       if (this.gameIsOver) {
         return;
       }
-      
+
       this.update();
       document.getElementById("lives").innerHTML ="lives: "+ this.lives;
       document.getElementById("score").innerHTML ="score: "+ this.score;
       
       window.requestAnimationFrame(() => this.gameLoop());
     }
-  
+    
     update() {
     
       this.player.move();
@@ -120,9 +116,25 @@ class Game {
   
       // Create a new obstacle based on a random probability
       // when there is no other obstacles on the screen
-      if (Math.random() < 0.08 && this.obstacles.length < 1.5) {
+      if(this.score<5)
+      {
+      if (Math.random() < 0.08 && this.obstacles.length < 2) {
         this.obstacles.push(new Obstacle(this.gameScreen));
       }
+    }
+      else if(this.score<10 && this.score>5  )
+      {
+        if (Math.random() < 0.06 && this.obstacles.length < 4) {
+          this.obstacles.push(new Obstacle(this.gameScreen));
+        }}
+        else{
+          if (Math.random() < 0.06 && this.obstacles.length < 6) {
+            this.obstacles.push(new Obstacle(this.gameScreen));
+          }
+        }
+
+      
+      //for the obstacle2
       if (Math.random() < 0.98 && this.obstacles2.length < 1) {
         this.obstacles2.push(new Obstacle2(this.gameScreen));
       }

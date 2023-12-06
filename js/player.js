@@ -1,28 +1,54 @@
-class Player extends Component {
-    constructor(gameScreen, left, top, width, height,imgSrc) {
-      super(gameScreen, left, top, width, height,imgSrc);
-  
-      this.directionX = 0;
-      this.directionY = 0;
-    }
-
-    change(elm){
-      if(this.elm>=1){
-        // this.player.imgSrc ="./images/health.png"
-        console.log(this.imgSrc)
-       this.imgSrc="./images/health.png";
-       console.log(this.imgSrc)
-      }else {this.imgSrc="./images/man.png";
-
-      }
-    }
-  
+class Player {
+  constructor(gameScreen, left, top, width, height) {
+    this.gameScreen = gameScreen;
+    this.left = left;
+    this.top = top;
+    this.width = width;
+    this.height = height;
+    this.directionX = 0;
+    this.directionY = 0;
+    this.element = document.createElement("img");
+    
+    this.element.src=""; 
+    //setTimeout(()=>{this.change()},7000)
+   
+    this.element.id="pic";
+    this.element.style.position = "absolute";
+    this.element.style.width = `${width}px`;
+    this.element.style.height = `${height}px`;
+    this.element.style.left = `${left}px`;
+    this.element.style.top = `${top}px`;
+   
+    this.gameScreen.appendChild(this.element);
+    let score=document.querySelector("#score");
+    let lives=document.querySelector("#lives");
+  }
     move() {
-      // Update player's car position based on directionX and directionY
+     
+      let liveNm = lives[0].textContent[7];
+      let scoreNm = score[0].textContent[8];
+      let scoreNum = score[0].textContent[7];
+      let lastScore=`${scoreNum}${scoreNm}`;
+
+     if ( lastScore >= 5 || scoreNum >=5  )
+      {
+        this.element.src ="./images/health.png";
+      }
+      else
+      {
+        this.element.src ="./images/man.png";
+      }
+      if (liveNm <= 2)
+      {
+        lives[0].setAttribute("style","color:red");
+       }
+      
+      
+      // Update player's position based on directionX and directionY
       this.left += this.directionX;
       this.top += this.directionY;
   
-      // Ensure the player's car stays within the game screen
+      // Ensure the player's stays within the game screen
       if (this.left < 10) {
         this.left = 10;
       }
@@ -36,7 +62,7 @@ class Player extends Component {
         this.top = this.gameScreen.offsetHeight - this.height - 10;
       }
   
-      // Update the player's car position on the screen
+      // Update the player's  position on the screen
       this.updatePosition();
     }
   
@@ -50,7 +76,7 @@ class Player extends Component {
         playerRect.top < obstacleRect.bottom &&
         playerRect.bottom > obstacleRect.top
       ) {
-        console.log("Crash!");
+       // console.log("Crash!");
   
         return true;
       } else {
@@ -61,6 +87,7 @@ class Player extends Component {
     updatePosition() {
       this.element.style.left = `${this.left}px`;
       this.element.style.top = `${this.top}px`;
+      
     }
   }
   

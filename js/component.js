@@ -14,7 +14,7 @@ class Component {
       this.element.style.left = `${left}px`;
       this.element.style.top = `${top}px`;
   
-      this.gameScreen.appendChild(this.element);
+     this.gameScreen.appendChild(this.element);
     }
   
     updatePosition() {
