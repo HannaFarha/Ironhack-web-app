@@ -2,7 +2,7 @@ class Obstacle extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * 500 + 70),
+      Math.floor(Math.random() * 700 + 70),
       0,
       80,
       100,

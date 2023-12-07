@@ -14,8 +14,8 @@ class Game {
       // this.imgSrc="./images/man.png",
    
       ); 
-      this.height =570;
-      this.width = 700;
+      this.height =700;
+      this.width = 900;
       this.obstacles = [];
       this.obstacles2 = [];
       this.score = 0;
@@ -42,7 +42,7 @@ class Game {
       if (this.gameIsOver) {
         return;
       }
-
+      
       this.update();
       document.getElementById("lives").innerHTML ="lives: "+ this.lives;
       document.getElementById("score").innerHTML ="score: "+ this.score;
@@ -118,17 +118,20 @@ class Game {
       // when there is no other obstacles on the screen
       if(this.score<5)
       {
+        
       if (Math.random() < 0.08 && this.obstacles.length < 2) {
         this.obstacles.push(new Obstacle(this.gameScreen));
       }
     }
-      else if(this.score<10 && this.score>5  )
-      {
-        if (Math.random() < 0.06 && this.obstacles.length < 4) {
+      else if(this.score<10 && this.score>=5  )
+      {this.gameScreen.style.backgroundImage= 'url(./images/healtBg.png)' ;
+        
+        if (Math.random() < 0.06 && this.obstacles.length < 3) {
           this.obstacles.push(new Obstacle(this.gameScreen));
         }}
         else{
-          if (Math.random() < 0.06 && this.obstacles.length < 6) {
+          this.gameScreen.style.backgroundImage= 'url(./images/healt.png)' ;
+          if (Math.random() < 0.06 && this.obstacles.length < 5) {
             this.obstacles.push(new Obstacle(this.gameScreen));
           }
         }
